@@ -21,6 +21,10 @@ function App() {
     .then((directorData) => setDirectors(directorData))
   }, [])
 
+  function addMovie(newMovie) {
+    setMovies([...movies, newMovie])
+  }
+
   return (
     <div className="App">
       <header>
@@ -30,8 +34,8 @@ function App() {
 
       <Route exact path="/addmovie" element = {
          <NewMovieForm
-         movies = {movies}
          directors = {directors}
+         addMovie = {addMovie}
          />
       }>
 

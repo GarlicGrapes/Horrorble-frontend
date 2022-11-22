@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function NewMovieForm({addMovie, movies, directors}) {
+function NewMovieForm({addMovie, directors}) {
 
     const blankMovieForm = {
         "title": "",
@@ -65,7 +65,7 @@ function NewMovieForm({addMovie, movies, directors}) {
             <input
                 type="integer"
                 id="movieName"
-                value={movieFormData.title}
+                value={movieFormData.release_year}
                 onChange= {handleMovieChange}
             />
 
