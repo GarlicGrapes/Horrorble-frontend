@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 
 function NavBar() {
 
+return(
 <div className="navbar">
 
       <button 
@@ -27,6 +28,7 @@ function NavBar() {
       </button>
 
     </div>
+)
 }
 
 export default NavBar;
