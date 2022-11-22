@@ -1,31 +1,22 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 
 function NavBar() {
 
 return(
-<div className="navbar">
-
-      <button 
-      component={NavLink} 
-      to="/" 
-      >
-        Home 
-      </button>
-
-      <button 
-      component={NavLink} 
-      to="/addmovie" 
-      >
-       Add Movie 
-      </button>
-
-      <button 
-      component={NavLink} 
-      to="/adddirector" 
-      >
-      Add Director
-      </button>
+    
+    <div className="navbar">  
+      
+            <button>
+              <Link to="/">Home</Link>
+            </button>
+            <button>
+              <Link to="/addmovie">Add Movie</Link>
+            </button>
+            <button>
+              <Link to="/adddirector">Add Director</Link>
+            </button>
+          
 
     </div>
 )
