@@ -5,15 +5,20 @@ import { recomposeColor } from '@mui/material';
 import NavBar from './NavBar';
 import HomePage from './HomePage';
 import {Routes, Route} from "react-router-dom";
+import NewMovieForm from './NewMovieForm';
 
 function App() {
 
   const [movies, setMovies] = useState([])
+  const [directors, setDirectors] = useState([])
   
   useEffect(() => {
     fetch("http://localhost:9292/movies")
     .then((r) => r.json())
     .then((movieData) => setMovies(movieData))
+    fetch("http://localhost:9292/directors")
+    .then((r) => r.json())
+    .then((directorData) => setDirectors(directorData))
   }, [])
 
   return (
@@ -23,9 +28,13 @@ function App() {
       
       <Routes>
 
-      <Route exact path="/addmovie">
-        {/* <NewMovieForm
-         /> */}
+      <Route exact path="/addmovie" element = {
+         <NewMovieForm
+         movies = {movies}
+         directors = {directors}
+         />
+      }>
+
       </Route>
 
       <Route exact path="/adddirector">
