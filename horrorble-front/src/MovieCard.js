@@ -38,12 +38,15 @@ function MovieCard({movie, director, deleteMovie, onUpdateMovie}) {
             <div>
                 Directed by: {director.name}
             </div>
+            
+            <div>
+            Watched?
             <input
             type="checkbox"
             checked={movie.watched}
             onChange={(e) => setWatched(e.target.checked)}
         />
-        <br/>
+        </div>
             <button onClick={handleDelete}>
                 Delete 🗑
             </button>

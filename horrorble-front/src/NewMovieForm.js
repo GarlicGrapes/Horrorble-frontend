@@ -8,6 +8,7 @@ function NewMovieForm({addMovie, directors}) {
     const blankMovieForm = {
         "title": "",
         "release_year": 0,
+        "poster_url": "",
         "director_id": 0,
         "watched": false
     }
@@ -79,6 +80,16 @@ function NewMovieForm({addMovie, directors}) {
                 {directorsMap}
             </select>
 
+            <br/>
+
+            <label>Poster Image URL </label>        
+            <input
+                type="text"
+                id="poster_url"
+                value={movieFormData.poster_url}
+                onChange= {handleMovieChange}
+            />
+            
             <br/>
 
             <input type="submit" value="Add Movie" />
