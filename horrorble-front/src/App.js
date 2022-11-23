@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect} from 'react';
-import { recomposeColor } from '@mui/material';
 import NavBar from './NavBar';
 import HomePage from './HomePage';
 import {Routes, Route} from "react-router-dom";
@@ -13,17 +11,27 @@ function App() {
   const [directors, setDirectors] = useState([])
   
   useEffect(() => {
-    fetch("http://localhost:9292/movies")
-    .then((r) => r.json())
-    .then((movieData) => setMovies(movieData))
     fetch("http://localhost:9292/directors")
     .then((r) => r.json())
     .then((directorData) => setDirectors(directorData))
   }, [])
 
+  useEffect(() => {
+    fetch("http://localhost:9292/movies")
+    .then((r) => r.json())
+    .then((movieData) => setMovies(movieData))
+  }, [])
+
+
   function addMovie(newMovie) {
     setMovies([...movies, newMovie])
   }
+
+  function removeMovie(id) {
+    const updatedMovies = movies.filter(movie => movie.id !== id)
+    setMovies(updatedMovies)
+  }
+  
 
   return (
     <div className="App">
@@ -50,6 +58,7 @@ function App() {
         <HomePage
          movies={movies}
          directors={directors}
+         deleteMovie={removeMovie}
         />
       }>
 

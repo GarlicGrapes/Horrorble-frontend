@@ -1,10 +1,17 @@
 import React from "react";
 
 
-function MovieCard({movie, director}) {
+function MovieCard({movie, director, deleteMovie}) {
+
+    function handleDelete(){
+        fetch(`http://localhost:9292/movies/${movie.id}`, { method: "Delete" })
+        deleteMovie(movie.id)
+    }
+
+
 
     return(
-        <div className="MovieCard">
+        <div className="MovieCard" >
             <div>
                 {movie.title}
 
@@ -13,8 +20,11 @@ function MovieCard({movie, director}) {
                 {movie.release_year}
             </div>
             <div>
-                {director.name}
+                Directed by: {director.name}
             </div>
+            <button onClick={handleDelete}>
+                Delete 🗑
+            </button>
         </div>
     )
 }
