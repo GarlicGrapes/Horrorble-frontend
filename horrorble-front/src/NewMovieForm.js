@@ -76,7 +76,7 @@ function NewMovieForm({addMovie, directors}) {
 
             <label>Director </label>
 
-            <select class="dropdown" id="director_id" value={movieFormData.director_id} onChange={(e) => handleMovieChange(e)} >
+            <select className="dropdown" id="director_id" value={movieFormData.director_id} onChange={(e) => handleMovieChange(e)} >
                 {directorsMap}
             </select>
 
@@ -89,7 +89,7 @@ function NewMovieForm({addMovie, directors}) {
                 value={movieFormData.poster_url}
                 onChange= {handleMovieChange}
             />
-            
+
             <br/>
 
             <input type="submit" value="Add Movie" />

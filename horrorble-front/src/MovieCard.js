@@ -25,7 +25,7 @@ function MovieCard({movie, director, deleteMovie, onUpdateMovie}) {
             onUpdateMovie(updatedMovie)});
     }
 
-
+    console.log(movie)
     return(
         <div className="MovieCard" >
             <div>
@@ -38,7 +38,12 @@ function MovieCard({movie, director, deleteMovie, onUpdateMovie}) {
             <div>
                 Directed by: {director.name}
             </div>
-            
+
+            <div>
+                <img src={movie.poster_url} width={300} alt={`${movie.title} theater release poster image`}/> 
+            </div>
+
+
             <div>
             Watched?
             <input
