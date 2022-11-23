@@ -2,6 +2,9 @@ import React, {useState} from "react";
 
 function NewMovieForm({addMovie, directors}) {
 
+    // const firstDirectorId = directors[0].id
+    // console.log(firstDirectorId)
+    
     const blankMovieForm = {
         "title": "",
         "release_year": 0,
@@ -11,7 +14,6 @@ function NewMovieForm({addMovie, directors}) {
     const [movieFormData, setMovieFormData] = useState(blankMovieForm)
 
     const directorsMap = directors.map((director) => {
-        
         return <option key={director.id} value={director.id}>{director.name}</option>
     })
 
@@ -48,13 +50,13 @@ function NewMovieForm({addMovie, directors}) {
     }
 
     return(
-        <form onSubmit={handleNewMovieSubmit} sx={{minWidth: 250}} variant="filled">
+        <form onSubmit={handleNewMovieSubmit} variant="filled">
             <h2>Add a Movie</h2>
 
             <label>Title </label>        
             <input
                 type="text"
-                id="release_year"
+                id="title"
                 value={movieFormData.title}
                 onChange= {handleMovieChange}
             />
@@ -63,8 +65,8 @@ function NewMovieForm({addMovie, directors}) {
 
             <label>Release Year </label>        
             <input
-                type="integer"
-                id="movieName"
+                type="number"
+                id="release_year"
                 value={movieFormData.release_year}
                 onChange= {handleMovieChange}
             />
@@ -73,7 +75,7 @@ function NewMovieForm({addMovie, directors}) {
 
             <label>Director </label>
 
-            <select sx={{minWidth: 250}} class="dropdown" id="director_id" value={movieFormData.director_id} onChange={(e) => handleMovieChange(e)} >
+            <select class="dropdown" id="director_id" value={movieFormData.director_id} onChange={(e) => handleMovieChange(e)} >
                 {directorsMap}
             </select>
 
