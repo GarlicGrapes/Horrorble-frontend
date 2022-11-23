@@ -1,16 +1,19 @@
 import React, {useState} from "react";
 import MovieCard from "./MovieCard";
 
-function HomePage({movies}) {
-
+function HomePage({movies, directors}) {
+    // console.log(movies[0].id)
     const MoviesList = movies.map(movie => {
+        const director = directors.find(dir => dir.id === movie.director_id)
+
         return(
-        <div>
+            <div>
             <MovieCard
-                key = {movie.id}
+                key = {movie.title}
                 movie = {movie}
+                director = {director}
             />  
-        </div>
+            </div>
         )})
 
 

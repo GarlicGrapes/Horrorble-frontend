@@ -4,7 +4,7 @@ function NewMovieForm({addMovie, directors}) {
 
     // const firstDirectorId = directors[0].id
     // console.log(firstDirectorId)
-    
+
     const blankMovieForm = {
         "title": "",
         "release_year": 0,
@@ -40,7 +40,10 @@ function NewMovieForm({addMovie, directors}) {
             },
             body: JSON.stringify(movieFormData),
         })
-        .then((r) => r.json())
+        .then((r) => {
+            r.json()
+        }
+            )
         .then((data) => {
             console.log(data)
             addMovie(data)

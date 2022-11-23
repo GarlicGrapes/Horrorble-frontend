@@ -49,6 +49,7 @@ function App() {
       <Route exact path="/" element= {
         <HomePage
          movies={movies}
+         directors={directors}
         />
       }>
 

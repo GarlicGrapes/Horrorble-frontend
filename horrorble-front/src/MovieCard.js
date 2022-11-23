@@ -1,17 +1,19 @@
-import React, {useState} from "react";
+import React from "react";
 
 
-function MovieCard({movie}) {
-    
+function MovieCard({movie, director}) {
 
     return(
         <div className="MovieCard">
             <div>
                 {movie.title}
-                {/* <button onClick={console.log()}>Movie</button> */}
+
             </div>
             <div>
                 {movie.release_year}
+            </div>
+            <div>
+                {director.name}
             </div>
         </div>
     )
