@@ -1,7 +1,7 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 
-function HomePage({movies, directors, deleteMovie}) {
+function HomePage({movies, directors, deleteMovie, updateMovie}) {
 
     const MoviesList = movies.map(movie => {
         const director = directors.find(dir => dir.id === movie.director_id)
@@ -12,6 +12,7 @@ function HomePage({movies, directors, deleteMovie}) {
                 movie = {movie}
                 director = {director}
                 deleteMovie = {deleteMovie}
+                onUpdateMovie = {updateMovie}
             />  
             <br/>
             </div>

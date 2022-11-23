@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import HomePage from './HomePage';
 import {Routes, Route} from "react-router-dom";
 import NewMovieForm from './NewMovieForm';
+import NewDirectorForm from './AddDirectorForm';
 
 function App() {
 
@@ -27,11 +28,28 @@ function App() {
     setMovies([...movies, newMovie])
   }
 
+  function addDirector(newDirector) {
+    setDirectors([...directors, newDirector])
+  }
+
   function removeMovie(id) {
     const updatedMovies = movies.filter(movie => movie.id !== id)
     setMovies(updatedMovies)
   }
   
+  function updateMovie(updatedMovie) {
+    const updatedMovies = movies.map(movie => {
+      if (movie.id == updatedMovie.id) {
+        return updatedMovie
+      }
+      else {
+        return movie
+      }
+    })
+    setMovies(updatedMovies)
+  }
+
+
 
   return (
     <div className="App">
@@ -49,9 +67,12 @@ function App() {
 
       </Route>
 
-      <Route exact path="/adddirector">
-        {/* <NewDirectorForm
-       /> */}
+      <Route exact path="/adddirector" element = {
+        <NewDirectorForm
+          addDirector={addDirector}
+        />
+      }>
+
       </Route>
 
       <Route exact path="/" element= {
@@ -59,6 +80,7 @@ function App() {
          movies={movies}
          directors={directors}
          deleteMovie={removeMovie}
+         updateMovie={updateMovie}
         />
       }>
 

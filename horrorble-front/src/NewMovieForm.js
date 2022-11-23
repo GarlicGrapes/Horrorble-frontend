@@ -8,7 +8,8 @@ function NewMovieForm({addMovie, directors}) {
     const blankMovieForm = {
         "title": "",
         "release_year": 0,
-        "director_id": 0
+        "director_id": 0,
+        "watched": false
     }
 
     const [movieFormData, setMovieFormData] = useState(blankMovieForm)
