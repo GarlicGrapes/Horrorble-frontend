@@ -5,6 +5,7 @@ import HomePage from './HomePage';
 import {Routes, Route} from "react-router-dom";
 import NewMovieForm from './NewMovieForm';
 import NewDirectorForm from './AddDirectorForm';
+import NewMonsterForm from './NewMonsterForm';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
   function addDirector(newDirector) {
     setDirectors([...directors, newDirector])
   }
+
 
   function removeMovie(id) {
     const updatedMovies = movies.filter(movie => movie.id !== id)
@@ -70,6 +72,15 @@ function App() {
       <Route exact path="/adddirector" element = {
         <NewDirectorForm
           addDirector={addDirector}
+        />
+      }>
+
+      </Route>
+
+      <Route exact path="/addmonster" element = {
+        <NewMonsterForm
+          // addMonster={addMonster}
+          movies={movies}
         />
       }>
 

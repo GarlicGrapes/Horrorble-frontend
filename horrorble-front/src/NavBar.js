@@ -11,10 +11,13 @@ return(
               <Link to="/">Home</Link>
             </button>
             <button>
-              <Link to="/addmovie">Add Movie</Link>
+              <Link to="/addmovie">Add Movie 🎥</Link>
             </button>
             <button>
-              <Link to="/adddirector">Add Director</Link>
+              <Link to="/adddirector">Add Director 🎬</Link>
+            </button>
+            <button>
+              <Link to="/addmonster">Add Monster 👹</Link>
             </button>
           
 

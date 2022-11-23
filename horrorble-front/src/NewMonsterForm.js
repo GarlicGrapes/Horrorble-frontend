@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function NewMonsterForm({movies}) {
+function NewMonsterForm({movies, addMonster}) {
 
     // const firstDirectorId = directors[0].id
     // console.log(firstDirectorId)
@@ -42,7 +42,7 @@ function NewMonsterForm({movies}) {
         })
         .then((r) => r.json())
         .then((data) => {
-            addMonster(data)
+            // addMonster(data)
             setMonsterFormData(blankMonsterForm)
         })
 
@@ -75,7 +75,7 @@ function NewMonsterForm({movies}) {
 
             <br/>
 
-            <select className="dropdown" id="movie_id" value={monsterFormData.movie_id} onChange={(e) => handleMovieChange(e)} >
+            <select className="dropdown" id="movie_id" value={monsterFormData.movie_id} onChange={(e) => handleMonsterChange(e)} >
                 {moviesMap}
             </select>
 
